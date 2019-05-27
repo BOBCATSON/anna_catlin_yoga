@@ -1,0 +1,15 @@
+$color-primary: #4f5598;
+
+h2 {
+  color: $color-primary;
+}
+
+.testing {
+  width: percentage(5/7);
+}
+.testing-2 {
+  width: percentage(3/7);
+}
+.testing-3 {
+  width: percentage(2/7);
+}
