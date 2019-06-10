@@ -44,13 +44,13 @@ base styles
 body {
   box-sizing: border-box;
   font-family: 'Lato', sans-serif;
-  height:1500px;
 }
 
 header {
+  position: relative;
   height: 100vh;
   width: 100vw;
-  background-image: url('./../images/yoga_3.jpg');
+  background-image: linear-gradient(to bottom, rgba($color-black, .3), rgba($color-black, .2)), url('./../images/yoga_3.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-box-shadow: 0px 5px 10px 0px rgba(107,107,107,1);
@@ -79,7 +79,6 @@ nav {
   & ul {
     display: table;
     width: 100%;
-    // padding: 1rem;
 
     & li {
       display: table-cell;
@@ -97,13 +96,18 @@ nav {
       }
 
       & ul.nav-item-parent {
-        width: 70%;
-        margin-left: 30%;
+        width: 50%;
+        // margin-left: 30%;
         padding: 1rem;
+        text-align: right;
 
         & li.nav-item  {
           max-width: 33.3333333333333%;
           text-align: center;
+
+          &:last-child {
+            padding: 0 0 0 1rem;
+          }
 
           & a {
               display: inline-block;
@@ -121,12 +125,10 @@ nav {
   text-transform: uppercase;
   font-weight: lighter;
   letter-spacing: 2px;
-  transition: transform .8s ease;
-  // border: solid 1px transparent;
+  transition: all .6s ease;
 
   &:hover:not(.logo) {
-    // border-bottom: 1px solid whitesmoke;
-    transform: scale(1.2);
+
   }
 
   &-button {
@@ -136,7 +138,7 @@ nav {
     font-weight: lighter;
     letter-spacing: 2px;
     border: solid 1px whitesmoke;
-    transition: all .8s ease;
+    transition: all .6s ease;
 
     &:hover {
       background-color: whitesmoke;
@@ -173,8 +175,16 @@ header text
 sections
 *******************************************************************************/
 
-.about-section {
+.hero {
 
+}
+
+.about-section {
+  height: 100vh;
+  position: relative;
+  &-content {
+    @include perfectCenter;
+  }
 }
 
 
