@@ -5,8 +5,6 @@ var babel = require('gulp-babel');
 var browserSync = require('browser-sync').create();
 
 
-
-
 //compile scss into css
 function sassCompile() {
   return gulp.src('./app/scss/**/*.scss')

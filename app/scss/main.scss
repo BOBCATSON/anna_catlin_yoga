@@ -9,6 +9,7 @@ variables
 // $gutter-horizontal: 6rem;
 $color-black: #000;
 $color-white: #fff;
+$color-grey: #7c7c7c;
 
 /*
 mixins
@@ -53,9 +54,6 @@ header {
   background-image: linear-gradient(to bottom, rgba($color-black, .3), rgba($color-black, 0)), url('./../images/yoga_3.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  // -webkit-box-shadow: 0px 5px 10px 0px rgba(107,107,107,1);
-  // -moz-box-shadow: 0px 5px 10px 0px rgba(107,107,107,1);
-  // box-shadow: 0px 5px 10px 0px rgba(107,107,107,1);
 }
 
 a {
@@ -72,15 +70,42 @@ p {
   font-weight: 300;
 }
 
-.section-header {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  width: 100%;
-  // text-transform: uppercase;
-  font-weight: 100;
-  color: $color-black;
+.button {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: lighter;
   letter-spacing: 2px;
-  font-size: 2.5rem;
+  display: inline-block;
+  padding: 1rem;
+
+  &-black {
+    @extend: .button;
+    background-color: #1f1f1f;
+    color: $color-white;
+    transition: all .6s ease;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+}
+
+.section {
+
+  &-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    // text-transform: uppercase;
+    font-weight: 100;
+    color: $color-black;
+    letter-spacing: 2px;
+    font-size: 2.5rem;
+  }
+
+  &-content {
+    margin-bottom: 1.5rem;
+  }
 }
 
 /*
@@ -116,9 +141,9 @@ nav {
       & ul.nav-item-parent {
         width: 50%;
         padding: 1rem;
+        margin-left: auto;
 
         & li.nav-item  {
-          width: 25%;
           text-align: center;
 
           &:last-child {
@@ -127,7 +152,7 @@ nav {
 
           & a {
               display: inline-block;
-              padding: 1rem;
+              padding: 1rem .5rem;
           }
         }
       }
@@ -148,11 +173,8 @@ nav {
   }
 
   &-button {
+    @extend .button;
     color: whitesmoke;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    font-weight: lighter;
-    letter-spacing: 2px;
     border: solid 1px whitesmoke;
     transition: all .6s ease;
 
@@ -181,8 +203,7 @@ header text
   }
 
   & > a.hero-button {
-    display: inline-block;
-    padding: 1rem;
+    @include .button;
     margin: 1.75rem 0 0 0;
   }
 }
@@ -212,9 +233,6 @@ sections
 .about-section {
   height: 100vh;
   position: relative;
-  // -webkit-box-shadow: 0px -5px 10px 0px rgba(107,107,107,1);
-  // -moz-box-shadow: 0px -5px 10px 0px rgba(107,107,107,1);
-  // box-shadow: 0px -5px 10px 0px rgba(107,107,107,1);
 
     &::after {
       content: "";
@@ -232,14 +250,43 @@ sections
 
   &-content {
     @include perfectCenter;
+    text-align: center;
 
     & p {
-      text-align: center;
       line-height: 2rem;
     }
   }
 }
 
+.classes-section {
+  height: 80vh;
+  position: relative;
+
+  &-content {
+    @include perfectCenter;
+    text-align: center;
+
+    & p {
+      line-height: 2rem;
+    }
+  }
+}
+
+.footer-section {
+  background-color: rgba($color-black, .8);
+  height: 25vh;
+  position: relative;
+
+  &-content {
+    @include perfectCenter;
+
+    & p {
+      text-align: center;
+      line-height: 2rem;
+      color: $color-grey;
+    }
+  }
+}
 
 /*
 utilities
