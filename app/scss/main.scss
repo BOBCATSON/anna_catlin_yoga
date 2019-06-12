@@ -8,8 +8,10 @@ variables
 // $gutter-vertical-small: 6rem;
 // $gutter-horizontal: 6rem;
 $color-black: #000;
+$color-black-light: #1f1f1f;
 $color-white: #fff;
 $color-grey: #7c7c7c;
+$color-grey-light: #9c9c9c;
 
 /*
 mixins
@@ -59,6 +61,7 @@ header {
 a {
   text-decoration: none;
   cursor: pointer;
+
   &:visited {
     color: $color-white;
   }
@@ -79,13 +82,13 @@ p {
   padding: 1rem;
 
   &-black {
-    @extend: .button;
-    background-color: #1f1f1f;
+    @extend .button;
+    background-color: $color-black-light;
     color: $color-white;
     transition: all .6s ease;
 
     &:hover {
-      opacity: .8;
+      background-color: lighten($color-black-light, 15%);
     }
   }
 }
@@ -113,6 +116,7 @@ navigation
 *******************************************************************************/
 
 nav {
+  //turn this style on at a certain height
   // background-image: linear-gradient(to bottom, rgba($color-black, .9), rgba($color-black, .8));
   position: fixed;
   top: 0;
@@ -169,7 +173,7 @@ nav {
   transition: all .6s ease;
 
   &:hover:not(.logo) {
-
+    color: $color-grey-light;
   }
 
   &-button {
@@ -203,7 +207,7 @@ header text
   }
 
   & > a.hero-button {
-    @include .button;
+    @extend .button;
     margin: 1.75rem 0 0 0;
   }
 }
@@ -261,6 +265,35 @@ sections
 .classes-section {
   height: 80vh;
   position: relative;
+
+  &-content {
+    @include perfectCenter;
+    text-align: center;
+
+    & p {
+      line-height: 2rem;
+    }
+  }
+}
+
+.contact-section {
+
+  height: 100vh;
+  position: relative;
+
+  &::after {
+    content: "";
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    background-image: linear-gradient(to bottom, rgba($color-white, .4), rgba($color-white, .1)), url('./../images/yoga_4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
   &-content {
     @include perfectCenter;

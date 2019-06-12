@@ -37,7 +37,7 @@ p {
   letter-spacing: 1px;
   font-weight: 300; }
 
-.button, .button-black, .nav-link-button {
+.button, .button-black, .nav-link-button, .header-text > a.hero-button {
   font-size: 1.1rem;
   text-transform: uppercase;
   font-weight: lighter;
@@ -46,7 +46,10 @@ p {
   padding: 1rem; }
   .button-black {
     background-color: #1f1f1f;
-    color: #fff; }
+    color: #fff;
+    transition: all .6s ease; }
+    .button-black:hover {
+      background-color: #454545; }
 
 .section-header {
   text-align: center;
@@ -102,6 +105,8 @@ nav {
   font-weight: lighter;
   letter-spacing: 2px;
   transition: all .6s ease; }
+  .nav-link:hover:not(.logo) {
+    color: #9c9c9c; }
   .nav-link-button {
     color: whitesmoke;
     border: solid 1px whitesmoke;
@@ -127,8 +132,6 @@ header text
     letter-spacing: 2px;
     font-size: 3.5rem; }
   .header-text > a.hero-button {
-    display: inline-block;
-    padding: 1rem;
     margin: 1.75rem 0 0 0; }
 
 /*
@@ -180,6 +183,30 @@ sections
     transform: translate(-50%, -50%);
     text-align: center; }
     .classes-section-content p {
+      line-height: 2rem; }
+
+.contact-section {
+  height: 100vh;
+  position: relative; }
+  .contact-section::after {
+    content: "";
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1)), url("./../images/yoga_4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .contact-section-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+    .contact-section-content p {
       line-height: 2rem; }
 
 .footer-section {
