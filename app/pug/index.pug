@@ -51,6 +51,28 @@ html(lang='en')
           h2.section-header Find out more
           p.section-content Contact me via email, phone, form etc..
           
+          form(action="/my-handling-form-page" method="post")
+            div
+              label(for="name") Name:
+              input(type="text" id="name" name="user-name" placeholder="Name")
+            div
+              label(for="email") Email:
+              input(type="text" id="email" name="user-mail" placeholder="Email")
+            div
+              label(for="msg") Message:
+              textarea(id="msg" cols="20" rows="10" name="user-message" placeholder="Message")
+            div
+              label(for="select")
+              select(name='Interested in')
+                option(value='double chocolate') Double Chocolate
+                option(value='vanilla') Vanilla
+                option(value='strawberry') Strawberry
+                option(value='caramel') Caramel
+            .button
+              button(type='submit') Submit
+            
+            
+          
       .footer-section
         footer.footer-section-content
           p &copy; Anna Catlin 2019
