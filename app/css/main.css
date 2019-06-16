@@ -148,6 +148,11 @@ sections
     .yoga-section-content p {
       text-align: center;
       line-height: 2rem; }
+    .yoga-section-content .image-section {
+      text-align: center;
+      padding: 1rem; }
+      .yoga-section-content .image-section img:not(:last-child) {
+        padding-right: 2rem; }
 
 .about-section {
   height: 100vh;
@@ -221,7 +226,18 @@ sections
     .footer-section-content p {
       text-align: center;
       line-height: 2rem;
+      padding: 1rem;
       color: #7c7c7c; }
+    .footer-section-content .footer-list a {
+      display: inline-block;
+      padding: .5rem 0;
+      color: #7c7c7c;
+      border-bottom: 1px solid transparent; }
+      .footer-section-content .footer-list a:hover {
+        color: #9c9c9c;
+        border-bottom: 1px solid #9c9c9c; }
+      .footer-section-content .footer-list a:not(:last-child) {
+        margin-right: 1.75rem; }
 
 /*
 utilities

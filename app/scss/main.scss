@@ -231,6 +231,18 @@ sections
       text-align: center;
       line-height: 2rem;
     }
+
+    & .image-section {
+      text-align: center;
+      padding: 1rem;
+
+      & img {
+
+        &:not(:last-child) {
+          padding-right: 2rem;
+        }
+      }
+    }
   }
 }
 
@@ -316,7 +328,24 @@ sections
     & p {
       text-align: center;
       line-height: 2rem;
+      padding: 1rem;
       color: $color-grey;
+    }
+
+    .footer-list a {
+      display: inline-block;
+      padding: .5rem 0;
+      color: $color-grey;
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        color: $color-grey-light;
+        border-bottom: 1px solid $color-grey-light;
+      }
+
+      &:not(:last-child) {
+        margin-right: 1.75rem;
+      }
     }
   }
 }
